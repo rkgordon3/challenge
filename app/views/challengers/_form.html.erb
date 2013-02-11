@@ -1,0 +1,29 @@
+<%= form_for(@challenger) do |f| %>
+  <% if @challenger.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@challenger.errors.count, "error") %> prohibited this challenger from being saved:</h2>
+
+      <ul>
+      <% @challenger.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :in %><br />
+    <%= f.check_box :in %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

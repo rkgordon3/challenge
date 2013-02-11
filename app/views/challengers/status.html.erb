@@ -1,0 +1,93 @@
+
+ <script>
+ var race_date = new Date(2013,3,28, 9, 0, 0);
+function timecalc() {
+
+    now = new Date();
+	
+	diff = race_date.valueOf() - now.valueOf();
+	
+	days = diff / (24 * 60 * 60 * 1000);
+	diff = diff %(24 * 60 * 60 * 1000);
+	hrs = diff / (60 * 60 * 1000);
+	diff = diff % (60 * 60 * 1000);
+	mins = diff / (60 * 1000);
+	diff = diff % (60 * 1000);
+	secs = diff /1000;
+	$('#days').html(Math.floor(days) + ' days');
+	$('#hours').html(Math.floor(hrs) + ' hours');
+	$('#minutes').html(Math.floor(mins) + ' minutes');
+	$('#seconds').html(Math.floor(secs) + ' seconds');
+	
+
+ };
+ 
+ setInterval(timecalc,1000);
+
+ $(body).ready(timecalc);
+ 
+$('#name').focus(function() { 
+	alert('focus');
+	$('#error-label').hide();
+	 });
+ 
+
+</script>
+
+
+<div class='row-fluid'>
+   <div class='span10 offset1'>
+	<div class='hero-unit'>
+
+	<h2>The Professor Gordon <a href='http://www.smumn.edu/undergraduate-home/about-smu/campus-ministry/row-ride-run'>Row, Ride, Run</a> Challenge</h2>
+	
+	If any Computer Science major beats the Prof OR there is 50% <abbr title='meaning you finish!'>participation</abbr> then all majors win a <a href='http://en.wikipedia.org/wiki/The_Uplift_Mofo_Party_Plan'>Uplift Mofo Pizza Party!</a>
+		<h2>Do you accept the challenge?</h2>
+       	<%= form_tag( challenge_challengers_path,  :class=>'form-inline', :remote=>true ) do -%>
+
+		
+		  <%= text_field_tag 'name', nil, :placeholder=>"Your SMU email" %>
+		  <%= submit_tag 'I Accept!',  :class=>'btn btn-primary' %>
+		  <br/>
+		  <%= label_tag 'email', "You must be a CS major to accept the challenge.", :id=> 'error-label', :style=>"display:none;color:red;" %>
+		  
+		<% end -%>
+		
+	</div>
+	</div>
+</div>
+<div class='row-fluid'>
+    
+	<div class='span7 offset1' >
+	   <div class='row'>
+		<div id='days' class='span10 offset2'	style='font-size:72px;margin-top:40px;'>
+			
+		</div>
+		</div>
+		<div class='row'>
+		<div id='hours' class='span10 offset2'	style='font-size:72px;margin-top:40px;'>
+			
+		</div>
+	   </div>
+	   <div class='row'>
+		<div id='minutes' class='span10 offset2'	style='font-size:72px;margin-top:40px;'>
+		
+		</div>
+	   </div>
+	   <div class='row'>
+		<div id='seconds' class='span10 offset2'	style='font-size:72px;margin-top:40px;'>
+			
+		</div>
+	   </div>
+	   
+	</div>
+   
+	<div class='span3'>
+	<div class='sidebar'>
+	<span class="label label-info" style='background-color:#006dcc;font-size:14pt;padding:10px;'>The Courageous Few</span>
+<%= challenger_list_tag %>
+	</div>
+	</div>
+</div>
+
+
