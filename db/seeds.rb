@@ -1,7 +1,16 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Challenger.create!(name: 'Rob', email: 'rgordon@smumn.edu')
+Challenger.create!(name: 'Marta', email: 'mxales11@smumn.edu')
+Challenger.create!(name: 'Joe', email: 'jpbudi11@smumn.edu')
+Challenger.create!(name: 'Dan', email: 'dbhaug11@smumn.edu')
+Challenger.create!(name: 'David', email: 'djcorp10@smumn.edu')
+Challenger.create!(name: 'Dylan', email: 'dlethe10@smumn.edu')
+Challenger.create!(name: 'Gabe', email: 'gbgrun10@smumn.edu')
+Challenger.create!(name: 'Hans', email: 'ehheuk07@smumn.edu')
+Challenger.create!(name: 'Lyric', email: 'llhupp09@smumn.edu')
+Challenger.create!(name: 'Talib', email: 'tmkhan10@smumn.edu')
+Challenger.create!(name: 'Owen', email: 'odkuem09@smumn.edu')
+Challenger.create!(name: 'Nathan', email: 'nlloyd@smumn.edu')
+Challenger.create!(name: 'PJ', email: 'pjhell11@smumn.edu')
+Challenger.create!(name: 'Josh', email: 'jdkorv11@smumn.edu')
+Challenger.create!(name: 'Kasha', email: 'kjplaw12@smumn.edu')
+Challenger.create!(name: 'Saron', email: 'smyifr11@smumn.edu')
