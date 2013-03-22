@@ -20,8 +20,13 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :in %><br />
-    <%= f.check_box :in %>
+    <%= f.label :accepted %><br />
+    <%= f.check_box :accepted %>
+  </div>
+  <div class="field">
+    <%= f.label :photo %><br />
+    <%= f.file_field :photo %>
+     
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,4 +1,5 @@
-$('#accept-list').append('<li>' + '<%=  "#{@c.name}" %>' + '</li>');
+
+$('#accept-list').append('<%= challenger_list_item(@c) %>')
+
 $('#name').val("");
 $('error-label').hide();
-

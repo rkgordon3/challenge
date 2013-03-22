@@ -1,90 +1,18 @@
 
- <script>
- var race_date = new Date(2013,3,28, 9, 0, 0);
-function timecalc() {
 
-    now = new Date();
-	
-	diff = race_date.valueOf() - now.valueOf();
-	
-	days = diff / (24 * 60 * 60 * 1000);
-	diff = diff %(24 * 60 * 60 * 1000);
-	hrs = diff / (60 * 60 * 1000);
-	diff = diff % (60 * 60 * 1000);
-	mins = diff / (60 * 1000);
-	diff = diff % (60 * 1000);
-	secs = diff /1000;
-	$('#days').html(Math.floor(days) + ' days');
-	$('#hours').html(Math.floor(hrs) + ' hours');
-	$('#minutes').html(Math.floor(mins) + ' minutes');
-	$('#seconds').html(Math.floor(secs) + ' seconds');
-	
+<div class='hero-unit' >
+ 	<div class="row">
+ 		<div class="span8 offset2">
+ 			<h1>Challenger In Training</h1>
+ 		</div>
+ 	</div>
 
- };
- 
- setInterval(timecalc,1000);
-
- $(body).ready(timecalc);
- 
-/*  $('#accept-list').append('<li>Joe</li>'); */
- 
-
-</script>
-
-
-<div class='row-fluid'>
-   <div class='span10 offset1'>
-	<div class='hero-unit'>
-	<p id="notice"><%= notice %></p>
-	The Professor Gordon <a href='http://www.smumn.edu/undergraduate-home/about-smu/campus-ministry/row-ride-run'>Row, Ride, Run</a> Challenge
-	<br/>
-	If any Computer Science major beats the Prof OR there is 50% <abbrev title='Finisher!'>participation</abbrev> then all majors win a Uplift Mofo Pizza Party!
-        <div class='page-header'><h1>Do you accept the challenge?</h1></div>
-		<form class='form-inline' >
-		<small class='text-info'>Use SMU email address</small><br/>
-		  <input type='text'>
-		  <button class='btn btn-primary'>I Accept!</button>
-		  
-		</form>
-		
-	</div>
-	</div>
-</div>
-<div class='row-fluid'>
-    
-	<div class='span7 offset1' >
-	   <div class='row'>
-		<div id='days' class='span10 offset2'	style='font-size:72px;margin-top:40px;'>
-			
-		</div>
-		</div>
-		<div class='row'>
-		<div id='hours' class='span10 offset2'	style='font-size:72px;margin-top:40px;'>
-			
-		</div>
-	   </div>
-	   <div class='row'>
-		<div id='minutes' class='span10 offset2'	style='font-size:72px;margin-top:40px;'>
-		
-		</div>
-	   </div>
-	   <div class='row'>
-		<div id='seconds' class='span10 offset2'	style='font-size:72px;margin-top:40px;'>
-			
-		</div>
-	   </div>
-	   
-	</div>
-   
-	<div class='span3'>
-	<div class='sidebar'>
-	<span class="label label-info" style='font-size:14pt;padding:10px;'>The Courageous Few</span>
-	<ul id='accept-list' class='unstyled' style="font-size:16pt;padding:8px">
-	   <li>Gabe</li>
-	   <li>Dylan</li>
-	</ul>
-	</div>
+	 <div class="row-fluid">
+	 	<div class="span4 offset4">
+ 			<%= image_tag @challenger.photo%>
+    	</div>
 	</div>
 </div>
 
 
+<%= link_to 'Back', root_path %>

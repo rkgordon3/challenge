@@ -85,7 +85,7 @@ $('#name').focus(function() {
 	<div class='span3'>
 	<div class='sidebar'>
 	<span class="label label-info" style='background-color:#006dcc;font-size:14pt;padding:10px;'>The Courageous Few</span>
-<%= challenger_list_tag %>
+<%= challenger_list(Challenger.where("accepted=?", true))%>
 	</div>
 	</div>
 </div>

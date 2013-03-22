@@ -1,0 +1,38 @@
+1) install imagemagick
+2) add line
+Paperclip.options[:command_path] = "/usr/bin/"
+to environments/[development,test].rb
+NOT production.rb
+3) See stackoverflow re: heroku http://stackoverflow.com/questions/3963892/heroku-running-imagemagick-w-paperclip
+4) bundle install
+Paperclip 3.0 introduces a non-backward compatible change in your attachment
+path. This will help to prevent attachment name clashes when you have
+multiple attachments with the same name. If you didn't alter your
+attachment's path and are using Paperclip's default, you'll have to add
+`:path` and `:url` to your `has_attached_file` definition. For example:
+
+    has_attached_file :avatar,
+      :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
+      :url => "/system/:attachment/:id/:style/:filename"
+
+5) rails g paperclip challenger photo
+ This adds photo field/column
+5.5) make photo attr_accessible
+6) rake db:migrate
+7) added
+
+  <div class="field">
+    <%= f.label :photo %><br />
+    <%= f.file_field :photo %>
+
+  </div>
+
+to views/challengers/_form
+
+File upload no brainer
+
+8) image stored at
+
+./public/system/challengers/photos/000/000/018/original/flag.jpg
+
+9) add to show

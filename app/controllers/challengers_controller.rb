@@ -1,5 +1,11 @@
 class ChallengersController < ApplicationController
 
+  before_filter :reject, :only => [:new, :index]
+
+  def reject
+    redirect_to root_path
+  end
+
   def status
   end
 
