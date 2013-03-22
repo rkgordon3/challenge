@@ -12,7 +12,7 @@ module ChallengersHelper
 	def challenger_list(challengers)
 		out = %Q[<ul id="accept-list" class="unstyled" style="font-size:16pt;padding:8px">]
 		challengers. each { |c|
-		   out += "<li>"+challenger_list_item(c)+"</li></br>"
+		   out += "<br/><li>"+challenger_list_item(c)+"</li>"
 		}
 		out += "</ul>"
 		out.html_safe
