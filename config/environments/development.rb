@@ -35,5 +35,9 @@ Rrr::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  Paperclip.options[:command_path] = "/usr/bin/convert"
+  if  `uname` =~ /Darwin/
+     Paperclip.options[:command_path] = "/usr/local/bin/convert"
+  else
+     Paperclip.options[:command_path] = "/usr/bin/convert"
+  end
 end

@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20130321221657) do
   create_table "challengers", :force => true do |t|
     t.string   "name"
     t.string   "email"
+    t.boolean  "in"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.boolean  "accepted"
